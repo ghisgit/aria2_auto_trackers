@@ -33,9 +33,9 @@ def update_aria2_bt():
         "jsonrpc": "2.0",
         "method": "aria2.changeGlobalOption",
         "id": str(uuid.uuid4()),
-        "params": [f"token:{token}", {"bt-tracker": "parse(get_url(bt_url))"}]
+        "params": [f"token:{token}", {"bt-tracker": parse(get_url(bt_url))}]
     }
-    if token:
+    if not token:
         rpc_json["params"].pop(0)
     jsonreq = json.dumps(rpc_json).encode("UTF-8")
     res = get_url(aria2_url, data=jsonreq)
