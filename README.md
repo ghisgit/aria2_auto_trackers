@@ -1,4 +1,5 @@
-# aria2 auto update bt-tracker
+# aria2更新tracker脚本
 ```
-Please modify the conf.py file
+1 检查update.py中的host和port还有token是否正确
+2 python update.py # 淦
 ```
